@@ -1,0 +1,42 @@
+/* site.css */
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+footer {
+    background-color: #343a40; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px 0; /* Espaciado interior del footer */
+    text-align: center; /* Alinear texto al centro */
+    position: fixed; /* Fijar el footer en la parte inferior */
+    width: 100%; /* Ancho completo */
+    bottom: 0; /* Pegar al borde inferior */
+}
+.card:hover {
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 123, 255, 0.1); /* Cambiar el color de fondo al pasar el ratón */
+}

@@ -1,0 +1,38 @@
+﻿@model Portfolio.Models.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Experiencia profesional";
+}
+
+<div class="container">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Experiencia Profesional</h1>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ul class="list-group">
+                @foreach (var experiencia in Model.ExperienciasProfesionales)
+                {
+                    <li class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">
+                                @experiencia.Empresa (@experiencia.FechaInicio.ToString("MMM yyyy")) -
+                                @if (experiencia.FechaFin.HasValue)
+                                {
+                                    @experiencia.FechaFin.Value.ToString("MMM yyyy")
+                                }
+                                else
+                                {
+                                    <text>Actualmente</text>
+                                }
+                            </h5>
+                        </div>
+                        <p class="mb-1"><strong>@experiencia.Puesto</strong></p>
+                        <p class="mb-1">@experiencia.Descripcion</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

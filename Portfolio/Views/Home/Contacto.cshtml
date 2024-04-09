@@ -1,0 +1,45 @@
+﻿@model Portfolio.Models.Contacto
+
+<div class="container">
+    <!-- Datos de contacto -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h2 class="text-center">¡Contáctame!</h2>
+            <p class="text-center">Completa el formulario o contáctame directamente a través de los siguientes medios:</p>
+            <ul class="list-unstyled">
+                <li><strong>Nombre:</strong> <a href="https://www.linkedin.com/in/ibai-ruiz-bretos/" target="_blank"><i class="bi bi-linkedin"></i> Ibai Ruiz Bretos</a></li>
+                <li><strong>Email:</strong> <a href="mailto:river.ruiz@gmail.com">river.ruiz@gmail.com</a></li>
+                <li><strong>Dirección:</strong> 48007 Bilbao</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h2 class="text-center">Formulario de contacto</h2>
+            <form action="/Contacto" method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje:</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Llamada a la acción -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <p class="text-center">¿Necesitas ayuda con tu proyecto? ¡No dudes en contactarme!</p>
+        </div>
+    </div>
+</div>

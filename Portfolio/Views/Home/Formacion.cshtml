@@ -1,0 +1,40 @@
+﻿@model Portfolio.Models.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Formación";
+}
+
+<div class="container">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Formación</h1>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var formacion in Model.Formaciones)
+        {
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">@formacion.Titulo</h5>
+                        <h6 class="card-subtitle mb-3 text-muted">@formacion.Institucion</h6>
+                        <p class="card-text mb-4">@formacion.Descripcion</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="text-muted">
+                                <i class="far fa-calendar-alt me-1"></i>
+                                @formacion.FechaInicio.ToString("MMM yyyy") -
+                                @if (formacion.FechaFin.HasValue)
+                                {
+                                    @formacion.FechaFin.Value.ToString("MMM yyyy")
+                                }
+                                else
+                                {
+                                    <span>Actualidad</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
