@@ -9,8 +9,6 @@ builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 builder.Services.AddTransient<IRepositorioExperienciaProfesional, RepositorioExperienciaProfesional>();
 builder.Services.AddScoped<IRepositorioFormacion, RepositorioFormacion>();
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

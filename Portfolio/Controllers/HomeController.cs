@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
 using Portfolio.Servicios;
-using System;
 using System.Diagnostics;
-using System.Linq;
+
 
 namespace Portfolio.Controllers
 {
@@ -15,7 +14,11 @@ namespace Portfolio.Controllers
         private readonly IRepositorioFormacion _repositorioFormacion;
 
 
-        public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos, IRepositorioExperienciaProfesional repositorioExperienciaProfesional, IRepositorioFormacion repositorioFormacion)
+        public HomeController(ILogger<HomeController> logger,
+            IRepositorioProyectos repositorioProyectos,
+            IRepositorioExperienciaProfesional repositorioExperienciaProfesional,
+            IRepositorioFormacion repositorioFormacion)
+
         {
             _logger = logger;
             _repositorioProyectos = repositorioProyectos;
@@ -50,6 +53,7 @@ namespace Portfolio.Controllers
             var proyectos = _repositorioProyectos.ObtenerProyectos();
             return View(proyectos);
         }
+
         public IActionResult ExperienciaProfesional()
         {
             var experiencias = _repositorioExperienciaProfesional.ObtenerExperienciasProfesionales();
@@ -61,6 +65,7 @@ namespace Portfolio.Controllers
 
             return View(homeIndexViewModel);
         }
+
         public IActionResult Formacion()
         {
             var formaciones = _repositorioFormacion.ObtenerFormacion();
@@ -73,17 +78,24 @@ namespace Portfolio.Controllers
             return View(homeIndexViewModel);
         }
 
-
-
         public IActionResult Contacto()
         {
             return View();
         }
-
-        [HttpPost]
-        public IActionResult Contacto(Contacto contacto)
+        public IActionResult Rubber()
         {
-            return RedirectToAction("Gracias");
+            return View();
+        }
+        public IActionResult Lezama()
+        {
+            return View();
+        }
+        public IActionResult Battleship()
+        {
+            return View();
+        }public IActionResult Enproceso()
+        {
+            return View();
         }
 
         public IActionResult Gracias()

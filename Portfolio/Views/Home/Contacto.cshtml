@@ -1,4 +1,7 @@
 ﻿@model Portfolio.Models.Contacto
+@{
+    ViewData["Title"] = "Contacto";
+}
 
 <div class="container">
     <!-- Datos de contacto -->
@@ -7,8 +10,8 @@
             <h2 class="text-center">¡Contáctame!</h2>
             <p class="text-center">Completa el formulario o contáctame directamente a través de los siguientes medios:</p>
             <ul class="list-unstyled">
-                <li><strong>Nombre:</strong> <a href="https://www.linkedin.com/in/ibai-ruiz-bretos/" target="_blank"><i class="bi bi-linkedin"></i> Ibai Ruiz Bretos</a></li>
-                <li><strong>Email:</strong> <a href="mailto:river.ruiz@gmail.com">river.ruiz@gmail.com</a></li>
+                <li><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/ibai-ruiz-bretos/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                <li><strong>Email:</strong> <a href="mailto:river.ruiz@gmail.com"><i class="bi bi-envelope"></i></a></li>
                 <li><strong>Dirección:</strong> 48007 Bilbao</li>
             </ul>
         </div>
@@ -17,21 +20,19 @@
     <!-- Formulario de contacto -->
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
-            <h2 class="text-center">Formulario de contacto</h2>
-            <form action="/Contacto" method="post">
+            <h3 class="text-center mb-4">Completa el formulario de contacto</h3>
+            <form action="https://formspree.io/f/xnqeozbz" method="POST" id="contactForm" novalidate>
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
+                    <label for="email" class="form-label">Tu correo electrónico:</label>
                     <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="mensaje" class="form-label">Mensaje:</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <label for="message" class="form-label">Tu mensaje:</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    <div class="invalid-feedback">Por favor ingresa tu mensaje.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
@@ -43,3 +44,19 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Deshabilitar la validación predeterminada de Bootstrap
+        // y activar la validación de HTML5 en su lugar
+        $(function () {
+            $('#contactForm').on('submit', function (e) {
+                if (!this.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                $(this).addClass('was-validated');
+            });
+        });
+    </script>
+}

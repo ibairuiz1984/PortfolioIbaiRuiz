@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Lezama";
+}
+
+<style>
+    .card-img-top {
+        max-height: 200px; /* Especifica el tamaño máximo */
+        object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    }
+</style>
+
+<div class="container">
+
+    <h2>¡Bienvenido a "El misterio de Lezama"!</h2>
+    <p>
+        Esta aplicación didáctica está diseñada especialmente para niños de primaria, ofreciendo una experiencia educativa única a través de juegos de lógica.
+        A continuación, te proporcionamos un manual detallado para aprovechar al máximo las funcionalidades de la aplicación.
+    </p>
+    <h3>1. Descripción General:</h3>
+    <p>
+        "El misterio de Lezama" es una aplicación didáctica que involucra juegos de lógica, como crucigramas, trivial, puzzles y sopa de letras.
+        El enfoque principal es enseñar a los niños sobre la historia, lugares y productos de la encantadora localidad de Lezama.
+    </p>
+    <h3>2. Funcionalidades Destacadas:</h3>
+    <ul>
+        <li><strong>Localización GPS:</strong> Permite acceder a pruebas y juegos específicos al encontrarse cerca de ubicaciones predeterminadas en Lezama. Cada ubicación ofrece preguntas tipo Trivial y un juego relacionado con monumentos, edificios o productos locales.</li>
+        <li><strong>Idiomas Disponibles:</strong> La aplicación te permite seleccionar entre tres idiomas: euskera, inglés y castellano. Puedes cambiar el idioma en la sección de ajustes.</li>
+        <li><strong>Modo Oscuro:</strong> "El misterio de Lezama" cuenta con la opción de Modo Oscuro para proporcionar una experiencia visual cómoda, especialmente en entornos con poca luz. Puedes activar o desactivar esta opción en la sección de ajustes.</li>
+    </ul>
+    <h3>3. Requisitos del Sistema:</h3>
+    <p>
+        La aplicación es compatible con dispositivos Android que ejecutan la versión 8.0 (Oreo) o superior.
+    </p>
+
+    <div class="container">
+        <h3 class="text-center mb-4">Imágenes del Proyecto</h3>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card border-0 shadow">
+                    <img src="~/img/lezama.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama.gif")')" style="cursor: pointer;" />
+                    <div class="card-body">
+                        <h5 class="card-title">App didáctica de Lezama</h5>
+                        <p class="card-text">Se compone de diferentes juegos y Tests sobre la localidad de Lezama.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border-0 shadow">
+                    <img src="~/img/lezama2.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama2.gif")')" style="cursor: pointer;" />
+                    <div class="card-body">
+                        <h5 class="card-title">Sopa de letras</h5>
+                        <p class="card-text">Se genera aleatoriamente desde un diccionario con ingredientes y productos típicos de la localidad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border-0 shadow">
+                    <img src="~/img/lezama3.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama3.gif")')" style="cursor: pointer;" />
+                    <div class="card-body">
+                        <h5 class="card-title">Puzzle</h5>
+                        <p class="card-text">La posicion inicial se genera aleatoriamente. Ordena los cuadros para crear una imagen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal para la imagen ampliada -->
+<div class="modal fade" id="imagenModal" tabindex="-1" aria-labelledby="imagenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <!-- Cambia el tamaño del modal a modal-lg -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- Mostrar la imagen en tamaño completo dentro del modal -->
+                <img id="imagenAmpliada" class="img-fluid rounded mx-auto d-block" alt="imagen proyecto ampliada" style="max-width: 70vw; max-height:70vh;"> <!-- Ajusta el tamaño de la imagen -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Función para ampliar la imagen y mostrarla en el modal
+        function ampliarImagen(imagenURL) {
+            $('#imagenAmpliada').attr('src', imagenURL);
+            $('#imagenModal').modal('show');
+        }
+
+        // Función para limpiar el modal cuando se cierra
+        $('.modal').on('hidden.bs.modal', function () {
+            $(this).find('#imagenAmpliada').attr('src', '');
+        });
+    </script>
+}
