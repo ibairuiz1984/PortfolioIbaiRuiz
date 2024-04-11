@@ -11,8 +11,8 @@
 
 <div class="container">
 
-    <h2>¡Bienvenido a "El misterio de Lezama"!</h2>
-    <p>
+    <h2 class="text-center">¡Bienvenido a 'El misterio de Lezama'!</h2>
+    <p class="lead">
         Esta aplicación didáctica está diseñada especialmente para niños de primaria, ofreciendo una experiencia educativa única a través de juegos de lógica.
         A continuación, te proporcionamos un manual detallado para aprovechar al máximo las funcionalidades de la aplicación.
     </p>
@@ -36,7 +36,7 @@
         <h3 class="text-center mb-4">Imágenes del Proyecto</h3>
 
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card border-0 shadow">
                     <img src="~/img/lezama.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama.gif")')" style="cursor: pointer;" />
                     <div class="card-body">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card border-0 shadow">
                     <img src="~/img/lezama2.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama2.gif")')" style="cursor: pointer;" />
                     <div class="card-body">
@@ -54,12 +54,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card border-0 shadow">
                     <img src="~/img/lezama3.gif" class="card-img-top img-fluid" alt="Lezama" onclick="ampliarImagen('@Url.Content("~/img/lezama3.gif")')" style="cursor: pointer;" />
                     <div class="card-body">
                         <h5 class="card-title">Puzzle</h5>
-                        <p class="card-text">La posicion inicial se genera aleatoriamente. Ordena los cuadros para crear una imagen.</p>
+                        <p class="card-text">La posición inicial se genera aleatoriamente. Ordena los cuadros para crear una imagen.</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <!-- Mostrar la imagen en tamaño completo dentro del modal -->
-                <img id="imagenAmpliada" class="img-fluid rounded mx-auto d-block" alt="imagen proyecto ampliada" style="max-width: 70vw; max-height:70vh;"> <!-- Ajusta el tamaño de la imagen -->
+                <img id="imagenAmpliada" class="img-fluid rounded mx-auto d-block" alt="imagen proyecto ampliada" style="max-width: 100%; max-height: 100%;"> <!-- Ajusta el tamaño de la imagen -->
             </div>
         </div>
     </div>
